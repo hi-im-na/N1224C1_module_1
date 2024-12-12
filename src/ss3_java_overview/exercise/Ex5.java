@@ -1,5 +1,7 @@
 package ss3_java_overview.exercise;
 
+import utils.InputCommon;
+
 public class Ex5 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
