@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InputCommon implements AutoCloseable {
     private final Scanner sc = new Scanner(System.in);
-    
+
     public String checkInputString() {
         String result = "";
         while (true) {
@@ -35,19 +35,27 @@ public class InputCommon implements AutoCloseable {
     /**
      * Check input integer limit
      *
-     * @param max maximum value
-     * @return an integer in range [0, max]
+     * @param number an integer
+     * @param type   used to specify the number provided is max or min
+     * @return an integer in range (-inf, range) or (range, +inf)
      */
-    public int checkInputInt(int max) {
+    public int checkInputInt(CheckInputType type, int number) {
         while (true) {
             try {
                 int result = Integer.parseInt(checkInputString());
-                if (result > max) {
+                if (type == CheckInputType.MAX && result > number) {
+                    throw new NumberFormatException();
+                }
+                if (type == CheckInputType.MIN && result < number) {
                     throw new NumberFormatException();
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.err.print("Please input a valid integer (0-" + max + "): ");
+                if (type == CheckInputType.MAX) {
+                    System.err.print("Please input a valid integer (-inf, " + number + "): ");
+                } else {
+                    System.err.print("Please input a valid integer [" + number + ", +inf): ");
+                }
             }
         }
     }
@@ -68,7 +76,7 @@ public class InputCommon implements AutoCloseable {
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.err.print("Please input a valid integer (" + min + "-" + max + "): ");
+                System.err.print("Please input a valid integer [" + min + "-" + max + "]: ");
             }
         }
     }
@@ -91,19 +99,27 @@ public class InputCommon implements AutoCloseable {
     /**
      * Check input double limit
      *
-     * @param max maximum value
-     * @return a double in range [0, max]
+     * @param number a double
+     * @param type   used to specify the number provided is max or min
+     * @return a double in range (-inf, range) or (range, +inf)
      */
-    public double checkInputDouble(double max) {
+    public double checkInputDouble(CheckInputType type, double number) {
         while (true) {
             try {
                 double result = Double.parseDouble(checkInputString());
-                if (result > max) {
+                if (type == CheckInputType.MAX && result > number) {
+                    throw new NumberFormatException();
+                }
+                if (type == CheckInputType.MIN && result < number) {
                     throw new NumberFormatException();
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.err.print("Please input a valid double (0-" + max + "): ");
+                if (type == CheckInputType.MAX) {
+                    System.err.print("Please input a valid double (-inf, " + number + "): ");
+                } else {
+                    System.err.print("Please input a valid double [" + number + ", +inf): ");
+                }
             }
         }
     }
