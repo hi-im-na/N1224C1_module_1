@@ -37,6 +37,27 @@ public class Ex16 {
         }
     }
 
+    public static void hinhF(int n) {
+        System.out.println("Hinh f");
+        for (int i = 0; i < n; i++) { // row
+            for (int j = 0; j <= 2 * n - 1; j++) {
+                if (j >= n - i - 1 && j <= n + i - 1) System.out.print("*");
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void hinhG(int n) {
+        System.out.println("Hinh g");
+        for (int i = n - 1; i >= 0; i--) { // row
+            for (int j = 0; j <= 2 * n - 1; j++) {
+                if (j >= n - i - 1 && j <= n + i - 1) System.out.print("*");
+                else System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
@@ -48,7 +69,8 @@ public class Ex16 {
             hinh('b', n);
             hinh('c', n);
             hinh('d', n);
-
+            hinhF(4);
+            hinhG(4);
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
