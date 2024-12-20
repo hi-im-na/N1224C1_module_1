@@ -1,6 +1,5 @@
 package ss7_debug_string;
 
-import utils.CheckInputType;
 import utils.InputCommon;
 
 public class Ex3 {

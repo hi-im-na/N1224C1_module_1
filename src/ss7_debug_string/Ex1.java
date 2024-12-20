@@ -1,6 +1,5 @@
 package ss7_debug_string;
 
-import utils.CheckInputType;
 import utils.InputCommon;
 
 public class Ex1 {
@@ -10,7 +9,7 @@ public class Ex1 {
         String tempStr = str;
 
         // a
-        System.out.println("Lay ra chu World: " + str.substring(6));
+        System.out.println("Lay ra chu World: " + tempStr.substring(6));
         tempStr = str;
 
         // b
