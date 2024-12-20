@@ -21,11 +21,11 @@ public class Ex7 {
 
     protected static void display(Employee employee) {
         System.out.println(" ----------------- ");
-        System.out.println("Ten nhan vien: " + employee.name);
-        System.out.println("Tuoi: " + employee.age);
-        System.out.println("Gioi tinh: " + employee.gender);
-        System.out.println("Luong co ban: " + employee.baseSalary);
-        System.out.println("Diem trung binh: " + employee.gpa);
+        System.out.println("Ten nhan vien: " + employee.getName());
+        System.out.println("Tuoi: " + employee.getAge());
+        System.out.println("Gioi tinh: " + employee.getGender());
+        System.out.println("Luong co ban: " + employee.getBaseSalary());
+        System.out.println("Diem trung binh: " + employee.getGpa());
     }
 
     public static void main(String[] args) {
