@@ -1,4 +1,4 @@
-package ss8_stringbuilder_date;
+package ss8_stringbuilder_date.exercises;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

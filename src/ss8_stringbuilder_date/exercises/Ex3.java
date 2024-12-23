@@ -1,4 +1,4 @@
-package ss8_stringbuilder_date;
+package ss8_stringbuilder_date.exercises;
 
 public class Ex3 {
 
