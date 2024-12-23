@@ -1,5 +1,9 @@
 package utils;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class InputCommon implements AutoCloseable {
@@ -141,6 +145,53 @@ public class InputCommon implements AutoCloseable {
                 return result;
             } catch (NumberFormatException e) {
                 System.err.print("Please input a valid double (" + min + "-" + max + "): ");
+            }
+        }
+    }
+
+    /**
+     * Check input date with format
+     *
+     * @param dateInputFormat format of date
+     * @return a date
+     */
+    public LocalDate checkInputDate(DateInputFormat dateInputFormat) {
+        while (true) {
+            try {
+                String date = checkInputString();
+                return switch (dateInputFormat) {
+                    case DD_MM_YYYY -> LocalDate.parse(date, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                    case MM_DD_YYYY -> LocalDate.parse(date, DateTimeFormatter.ofPattern("MM/dd/yyyy"));
+                    case YYYY_MM_DD -> LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+                };
+            } catch (DateTimeParseException e) {
+                System.err.printf("Please input a valid date (%s): ", dateInputFormat.getPattern());
+            }
+        }
+    }
+
+    /**
+     * Check input value if it is matched with one of the enum values
+     *
+     * @param enumType type
+     * @return Enum value
+     */
+    public <E extends Enum<E>> String checkInputEnum(Class<E> enumType) {
+        while (true) {
+            try {
+                String value = checkInputString().toUpperCase(Locale.ROOT);
+                for (E e : enumType.getEnumConstants()) {
+                    if (e.name().equals(value)) {
+                        return value;
+                    }
+                }
+                throw new IllegalArgumentException();
+            } catch (IllegalArgumentException e) {
+                System.err.print("Please input a valid value: ");
+                for (E e1 : enumType.getEnumConstants()) {
+                    System.err.print(e1.name().toLowerCase(Locale.ROOT) + " || ");
+                }
+                System.err.println();
             }
         }
     }
