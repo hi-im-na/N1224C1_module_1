@@ -2,7 +2,7 @@ package ss6_method;
 
 import ss5_loop.exercise.Ex21;
 import ss5_loop.exercise.Ex22;
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex2 {
@@ -54,7 +54,7 @@ public class Ex2 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so n: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 0);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             System.out.println("So dao nguoc la: " + reversedNumber(n));
             System.out.println("La so doi xung: " + Ex21.isSymmetry(n));

@@ -1,6 +1,6 @@
 package ss5_loop.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex13 {
@@ -40,10 +40,10 @@ public class Ex13 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so nguyen duong a: ");
-            int a = ic.checkInputInt(CheckInputType.MIN, 0);
+            int a = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             System.out.print("Nhap so nguyen duong b: ");
-            int b = ic.checkInputInt(CheckInputType.MIN, 0);
+            int b = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
 
             // result

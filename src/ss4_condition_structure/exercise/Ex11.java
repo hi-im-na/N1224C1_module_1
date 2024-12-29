@@ -1,6 +1,6 @@
 package ss4_condition_structure.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex11 {
@@ -12,7 +12,7 @@ public class Ex11 {
             System.out.print("Nhap vao thang: ");
             int month = ic.checkInputInt(1, 12);
             System.out.print("Nhap vao nam: ");
-            int year = ic.checkInputInt(CheckInputType.MIN, 0);
+            int year = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             // check valid day
             int daysOfMonth = Ex8.getDaysOfMonth(month, year);

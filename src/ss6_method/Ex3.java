@@ -1,7 +1,7 @@
 package ss6_method;
 
 import ss5_loop.exercise.Ex11;
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex3 {
@@ -43,7 +43,7 @@ public class Ex3 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so n: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 0);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             System.out.println("Tong A = " + sumA(n));
             System.out.println("Tong B = " + sumB(n));

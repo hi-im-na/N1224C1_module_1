@@ -1,6 +1,6 @@
 package ss4_condition_structure.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex7 {
@@ -9,7 +9,7 @@ public class Ex7 {
             System.out.print("Nhap tham nien cong tac: ");
             double basicSalary = 650000;
             double factor;
-            int yearsWorked = ic.checkInputInt(CheckInputType.MIN, 1); // month
+            int yearsWorked = ic.checkInputInt(CheckInputLimit.MIN, 1); // month
 
             if (yearsWorked < 12) factor = 1.92;
             else if (yearsWorked < 36) factor = 2.34;

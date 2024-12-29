@@ -1,6 +1,6 @@
 package ss5_loop.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 import java.util.LinkedHashMap;
@@ -12,9 +12,9 @@ public class Ex24 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap gia tien mon do: ");
-            int price = ic.checkInputInt(CheckInputType.MIN, 0);
+            int price = ic.checkInputInt(CheckInputLimit.MIN, 0);
             System.out.print("Nhap so tien khach tra: ");
-            int payMoney = ic.checkInputInt(CheckInputType.MIN, price);
+            int payMoney = ic.checkInputInt(CheckInputLimit.MIN, price);
 
 
             Map<Integer, Integer> moneyMap = new LinkedHashMap<>();

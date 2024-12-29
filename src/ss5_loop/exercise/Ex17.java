@@ -1,13 +1,13 @@
 package ss5_loop.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex17 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap chieu dai canh: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 1);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 1);
 
 
             System.out.println("Hinh a: ");

@@ -1,6 +1,6 @@
 package ss6_method;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex5 {
@@ -30,7 +30,7 @@ public class Ex5 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so nguyen duong n: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 0);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             fibonacci(n);
         } catch (Exception e) {

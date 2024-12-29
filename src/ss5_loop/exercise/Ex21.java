@@ -1,6 +1,6 @@
 package ss5_loop.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex21 {
@@ -49,7 +49,7 @@ public class Ex21 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so nguyen duong n: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 0);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             System.out.println("La so doi xung: " + isSymmetry(n));
             System.out.println("La so nguyen to: " + isPrime(n));

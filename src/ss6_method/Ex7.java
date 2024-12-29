@@ -1,6 +1,6 @@
 package ss6_method;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex7 {
@@ -10,13 +10,13 @@ public class Ex7 {
         System.out.print("Ten nhan vien: ");
         employee.setName(ic.checkInputString());
         System.out.print("Tuoi: ");
-        employee.setAge(ic.checkInputInt(CheckInputType.MIN, 18));
+        employee.setAge(ic.checkInputInt(CheckInputLimit.MIN, 18));
         System.out.print("Gioi tinh: ");
         employee.setGender(ic.checkInputString());
         System.out.print("Luong co ban: ");
-        employee.setBaseSalary(ic.checkInputInt(CheckInputType.MIN, 0));
+        employee.setBaseSalary(ic.checkInputInt(CheckInputLimit.MIN, 0));
         System.out.print("Diem trung binh: ");
-        employee.setGpa(ic.checkInputDouble(CheckInputType.MIN, 0));
+        employee.setGpa(ic.checkInputDouble(CheckInputLimit.MIN, 0));
     }
 
     protected static void display(Employee employee) {
@@ -31,7 +31,7 @@ public class Ex7 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so n: ");
-            int n = ic.checkInputInt(CheckInputType.MAX, 5);
+            int n = ic.checkInputInt(CheckInputLimit.MAX, 5);
 
             Employee[] employees = new Employee[n];
             for (int i = 0; i < n; i++) {

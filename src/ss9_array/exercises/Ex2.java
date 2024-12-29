@@ -1,7 +1,7 @@
 package ss9_array.exercises;
 
-import utils.CheckInputType;
-import utils.GenderTypeVienamese;
+import utils.enums.CheckInputLimit;
+import utils.enums.GenderTypeVienamese;
 import utils.InputCommon;
 
 public class Ex2 {
@@ -18,13 +18,13 @@ public class Ex2 {
             System.out.print("Nhap ten: ");
             name[i] = ic.checkInputString();
             System.out.print("Nhap tuoi: ");
-            age[i] = ic.checkInputInt(CheckInputType.MIN, 1);
+            age[i] = ic.checkInputInt(CheckInputLimit.MIN, 1);
             System.out.print("Nhap gioi tinh (nam/ nu/ khac): ");
             gender[i] = ic.checkInputEnum(GenderTypeVienamese.class);
             System.out.print("Nhap luong co ban: ");
-            salary[i] = ic.checkInputInt(CheckInputType.MIN, 0);
+            salary[i] = ic.checkInputInt(CheckInputLimit.MIN, 0);
             System.out.print("Nhap diem trung binh: ");
-            gpa[i] = ic.checkInputDouble(CheckInputType.MIN, 0);
+            gpa[i] = ic.checkInputDouble(CheckInputLimit.MIN, 0);
         }
     }
 
@@ -40,7 +40,7 @@ public class Ex2 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so nhan vien muon nhap: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 1);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 1);
 
             name = new String[n];
             age = new int[n];

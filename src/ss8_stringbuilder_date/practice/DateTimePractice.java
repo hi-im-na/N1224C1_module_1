@@ -1,6 +1,6 @@
 package ss8_stringbuilder_date.practice;
 
-import utils.DateInputFormat;
+import utils.enums.DateInputFormat;
 import utils.InputCommon;
 
 import java.time.LocalDate;

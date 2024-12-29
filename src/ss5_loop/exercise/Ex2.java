@@ -1,6 +1,6 @@
 package ss5_loop.exercise;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 public class Ex2 {
@@ -8,7 +8,7 @@ public class Ex2 {
 
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so n: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 0);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 0);
 
             for (int i = 1; i <= n; i += 2) {
                 if (i == n || i == n - 1) {

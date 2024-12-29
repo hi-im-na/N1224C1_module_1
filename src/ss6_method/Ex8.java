@@ -1,6 +1,6 @@
 package ss6_method;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 import static ss6_method.Ex7.*;
@@ -11,7 +11,7 @@ public class Ex8 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so n: ");
-            int n = ic.checkInputInt(CheckInputType.MAX, 5);
+            int n = ic.checkInputInt(CheckInputLimit.MAX, 5);
 
             Employee[] employees = new Employee[n];
             for (int i = 1; i <= n; i++) {

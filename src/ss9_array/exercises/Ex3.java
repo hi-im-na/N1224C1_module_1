@@ -1,6 +1,6 @@
 package ss9_array.exercises;
 
-import utils.CheckInputType;
+import utils.enums.CheckInputLimit;
 import utils.InputCommon;
 
 import java.util.Arrays;
@@ -24,7 +24,7 @@ public class Ex3 {
     public static void main(String[] args) {
         try (InputCommon ic = new InputCommon()) {
             System.out.print("Nhap so nhan vien muon nhap: ");
-            int n = ic.checkInputInt(CheckInputType.MIN, 1);
+            int n = ic.checkInputInt(CheckInputLimit.MIN, 1);
 
             name = new String[n];
             age = new int[n];

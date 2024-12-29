@@ -1,5 +1,8 @@
 package utils;
 
+import utils.enums.CheckInputLimit;
+import utils.enums.DateInputFormat;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -43,19 +46,19 @@ public class InputCommon implements AutoCloseable {
      * @param type   used to specify the number provided is max or min
      * @return an integer in range (-inf, range) or (range, +inf)
      */
-    public int checkInputInt(CheckInputType type, int number) {
+    public int checkInputInt(CheckInputLimit type, int number) {
         while (true) {
             try {
                 int result = Integer.parseInt(checkInputString());
-                if (type == CheckInputType.MAX && result > number) {
+                if (type == CheckInputLimit.MAX && result > number) {
                     throw new NumberFormatException();
                 }
-                if (type == CheckInputType.MIN && result < number) {
+                if (type == CheckInputLimit.MIN && result < number) {
                     throw new NumberFormatException();
                 }
                 return result;
             } catch (NumberFormatException e) {
-                if (type == CheckInputType.MAX) {
+                if (type == CheckInputLimit.MAX) {
                     System.err.print("Please input a valid integer (-inf, " + number + "): ");
                 } else {
                     System.err.print("Please input a valid integer [" + number + ", +inf): ");
@@ -107,19 +110,19 @@ public class InputCommon implements AutoCloseable {
      * @param type   used to specify the number provided is max or min
      * @return a double in range (-inf, range) or (range, +inf)
      */
-    public double checkInputDouble(CheckInputType type, double number) {
+    public double checkInputDouble(CheckInputLimit type, double number) {
         while (true) {
             try {
                 double result = Double.parseDouble(checkInputString());
-                if (type == CheckInputType.MAX && result > number) {
+                if (type == CheckInputLimit.MAX && result > number) {
                     throw new NumberFormatException();
                 }
-                if (type == CheckInputType.MIN && result < number) {
+                if (type == CheckInputLimit.MIN && result < number) {
                     throw new NumberFormatException();
                 }
                 return result;
             } catch (NumberFormatException e) {
-                if (type == CheckInputType.MAX) {
+                if (type == CheckInputLimit.MAX) {
                     System.err.print("Please input a valid double (-inf, " + number + "): ");
                 } else {
                     System.err.print("Please input a valid double [" + number + ", +inf): ");
